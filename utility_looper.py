@@ -1,3 +1,10 @@
+#   Script:     utility_looper.py
+#   Version:    v0.1
+#   Purpose:    Loops through all stores and pings VLAN 29 router for each store
+#   Updated:    07.02.23
+#   Author:     Zach.Weir
+#   Email:      zach.weir@target.com
+
 import os
 import subprocess
 import sys
