@@ -6,7 +6,7 @@
 #   Email:      zach.weir@target.com
 
 import socket
-from utilities import ping_host
+from utility_looper import ping_host
 
 def get_printer_model(printer_ip):
     string_to_send = "! U1 getvar \"usb.device.product_string\"\r\n"
