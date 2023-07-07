@@ -6,8 +6,6 @@
 #   Email:      zach.weir@target.com
 
 import os
-import sys
-import telnetlib
 import socket
 
 # INITIAL CONFIG

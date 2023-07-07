@@ -6,7 +6,7 @@
 #   Email:      zach.weir@target.com
 
 import socket
-from utility_looper import ping_host
+import utilities as util
 
 def get_printer_model(printer_ip):
     string_to_send = "! U1 getvar \"usb.device.product_string\"\r\n"
@@ -22,20 +22,6 @@ def get_printer_model(printer_ip):
     except:
         pass
 
-    if "zq620" in data:
-        printer_model = "ZQ620"
-    elif "qln320" in data:
-        printer_model = "QLN320"
-    elif "zt410" in data:
-        printer_model = "ZT410"
-    elif "zt411" in data:
-        printer_model = "ZT411"
-    else:
-        printer_model = "UNKNOWN"
-
-    print(f"Printer model - {printer_model}")
-
-
 SERVER_PORT = 9100
 BUFFER_SIZE = 1024
 TCP_PORT = SERVER_PORT
@@ -43,9 +29,11 @@ TCP_PORT = SERVER_PORT
 printer_hostname = input("Enter printer hostname -> ")
 printer_hostname = printer_hostname.strip()
 printer_ip = socket.gethostbyname(printer_hostname)
-ping_response = ping_host(printer_hostname)
+ping_response = util.ping_host(printer_hostname)
 
 if ping_response == 1:
     print(f"{printer_hostname} is offline!")
 else:
-    get_printer_model(printer_ip)
+    #get_printer_model(printer_ip)
+    model = util.get_printer_model(printer_ip)
+    print(model)
