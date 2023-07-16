@@ -8,6 +8,7 @@
 import os
 import subprocess
 
+
 def ping_host(host):
     # get OS name
     operating_system = os.name
@@ -17,6 +18,7 @@ def ping_host(host):
     else:
         ping = subprocess.call(['ping', '-c', '1', host], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     return ping
+
 
 def validate_printer_model(data):
     if "zq620" in data:
