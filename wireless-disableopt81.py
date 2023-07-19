@@ -1,7 +1,7 @@
 #   Script:     wireless_disable-opt81.py
-#   Version:    v0.1
+#   Version:    v0.1.1
 #   Purpose:    Disable option 81 on wireless printers
-#   Updated:    07.02.23
+#   Updated:    07.17.23
 #   Author:     Zach.Weir
 #   Email:      zach.weir@target.com
 
@@ -17,3 +17,10 @@ host_list = list(map(str, hostname.split())) # was ipAndHostList
 print(host_list)
 report_line = f"T{store}" # was reportLine
 printer_host = store + "prt0" # storeNameAndPRT0
+
+""" 
+import utilities as util
+
+ping = util.ping_host("10.3.0.2")
+print(ping)
+"""
